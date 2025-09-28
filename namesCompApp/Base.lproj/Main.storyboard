@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="namesCompApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="namesCompApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,6 +39,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showResultBtnPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="U6C-Xr-efF"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="m1J-bl-adW">
                                 <rect key="frame" x="20" y="296" width="353" height="98"/>
@@ -90,46 +93,51 @@
                             <constraint firstItem="Ibc-IU-eH0" firstAttribute="top" secondItem="m1J-bl-adW" secondAttribute="bottom" constant="40" id="leF-cd-G5l"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="parthnerNameTextField" destination="NvS-kU-aK2" id="R83-FY-P4z"/>
+                        <outlet property="yourNameTextField" destination="FS3-Oi-bW2" id="S7F-SV-Xlg"/>
+                        <segue destination="bpD-wg-Gee" kind="show" identifier="goToResult" id="mO4-4R-SzH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="101.5267175572519" y="-27.464788732394368"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="jHN-th-A5o">
             <objects>
-                <viewController id="bpD-wg-Gee" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="bpD-wg-Gee" customClass="ResultViewController" customModule="namesCompApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2mT-Kw-eC4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compatibility of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzt-cw-Bq7">
-                                <rect key="frame" x="109" y="218" width="175" height="48"/>
+                                <rect key="frame" x="109" y="159" width="175" height="48"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name and Second name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FX-y0-vPl">
-                                <rect key="frame" x="69" y="296" width="255" height="24"/>
+                                <rect key="frame" x="69" y="237" width="255" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hcu-Do-JiR">
-                                <rect key="frame" x="46.666666666666657" y="350" width="300" height="4"/>
+                                <rect key="frame" x="46.666666666666657" y="291" width="300" height="4"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="0yh-w0-tuo"/>
                                 </constraints>
                                 <color key="progressTintColor" systemColor="systemRedColor"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POx-zy-hzj">
-                                <rect key="frame" x="173" y="374" width="47" height="24"/>
+                                <rect key="frame" x="173" y="315" width="47" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFD-TA-xR5">
-                                <rect key="frame" x="126.66666666666669" y="438" width="140" height="50"/>
+                                <rect key="frame" x="126.66666666666669" y="379" width="140" height="50"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="AKa-sC-BaB"/>
@@ -162,10 +170,16 @@
                             <constraint firstItem="POx-zy-hzj" firstAttribute="top" secondItem="Hcu-Do-JiR" secondAttribute="bottom" constant="20" id="tk0-n2-IQf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="SlK-xA-c5U"/>
+                    <connections>
+                        <outlet property="namesLabel" destination="6FX-y0-vPl" id="m9a-oc-Gnb"/>
+                        <outlet property="progressView" destination="Hcu-Do-JiR" id="zT3-A7-Rc3"/>
+                        <outlet property="resultLabel" destination="POx-zy-hzj" id="8UN-Z2-nwv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xtx-yS-9J1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853" y="-27"/>
+            <point key="canvasLocation" x="976" y="-27"/>
         </scene>
     </scenes>
     <resources>
