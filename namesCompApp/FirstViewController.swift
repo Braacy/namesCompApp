@@ -28,7 +28,13 @@ class FirstViewController: UIViewController {
     @IBAction func showResultBtnPressed() {
         performSegue(withIdentifier: "goToResult", sender: nil)
     }
-    
+    @IBAction func unwindSegueToFirstVC(segue: UIStoryboardSegue){
+        
+        guard segue.identifier == "unwindSegue" else { return }
+        
+//        yourNameTextField.text = ""
+//        parthnerNameTextField.text = ""
+    }
 }
 
 extension FirstViewController: UITextFieldDelegate {

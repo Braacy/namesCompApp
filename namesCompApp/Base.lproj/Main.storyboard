@@ -159,6 +159,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goBackBtnPressed" destination="bpD-wg-Gee" eventType="touchUpInside" id="79W-qK-nUo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nlE-1C-lci"/>
@@ -181,9 +184,11 @@
                         <outlet property="namesLabel" destination="6FX-y0-vPl" id="m9a-oc-Gnb"/>
                         <outlet property="progressView" destination="Hcu-Do-JiR" id="zT3-A7-Rc3"/>
                         <outlet property="resultLabel" destination="POx-zy-hzj" id="8UN-Z2-nwv"/>
+                        <segue destination="Emm-yK-B4t" kind="unwind" identifier="unwindSegue" unwindAction="unwindSegueToFirstVCWithSegue:" id="f4W-bx-fjD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xtx-yS-9J1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Emm-yK-B4t" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="976" y="-27"/>
         </scene>

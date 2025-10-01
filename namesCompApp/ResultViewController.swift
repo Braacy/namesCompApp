@@ -32,6 +32,11 @@ class ResultViewController: UIViewController {
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 4)
     }
     
+    @IBAction func goBackBtnPressed() {
+        performSegue(withIdentifier: "unwindSegue", sender: nil)
+    }
+    
+    
     private func findValue(for name: String) -> Int {
         var count: Int = 0
         
